@@ -215,10 +215,7 @@ struct Args {
     )]
     max_concurrent_requests: usize,
 
-    #[arg(
-        long, 
-        help = "Specify the session token for AWS S3"
-    )]
+    #[arg(long, help = "Specify the session token for AWS S3")]
     session_token: Option<String>,
 
     #[arg(
