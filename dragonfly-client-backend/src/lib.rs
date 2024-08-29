@@ -348,4 +348,44 @@ mod tests {
         let backend = backend_factory.build("s3://example.com");
         assert!(backend.is_ok());
     }
+
+    #[test]
+    fn should_return_gcs_backend() {
+        let backend_factory =
+            BackendFactory::new(Some(Path::new("/var/lib/dragonfly/plugins/backend/"))).unwrap();
+        let backend = backend_factory.build("gs://example.com");
+        assert!(backend.is_ok());
+    }
+
+    #[test]
+    fn should_return_abs_backend() {
+        let backend_factory =
+            BackendFactory::new(Some(Path::new("/var/lib/dragonfly/plugins/backend/"))).unwrap();
+        let backend = backend_factory.build("abs://example.com");
+        assert!(backend.is_ok());
+    }
+
+    #[test]
+    fn should_return_oss_backend() {
+        let backend_factory =
+            BackendFactory::new(Some(Path::new("/var/lib/dragonfly/plugins/backend/"))).unwrap();
+        let backend = backend_factory.build("oss://example.com");
+        assert!(backend.is_ok());
+    }
+
+    #[test]
+    fn should_return_obs_backend() {
+        let backend_factory =
+            BackendFactory::new(Some(Path::new("/var/lib/dragonfly/plugins/backend/"))).unwrap();
+        let backend = backend_factory.build("obs://example.com");
+        assert!(backend.is_ok());
+    }
+
+    #[test]
+    fn should_return_cos_backend() {
+        let backend_factory =
+            BackendFactory::new(Some(Path::new("/var/lib/dragonfly/plugins/backend/"))).unwrap();
+        let backend = backend_factory.build("cos://example.com");
+        assert!(backend.is_ok());
+    }
 }
